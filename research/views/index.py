@@ -1,5 +1,8 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Research Index")
+    context = {
+        'index_title': 'Research Home Page',
+    }
+    return render(request, 'research/index.html', context)
