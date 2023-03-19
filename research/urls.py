@@ -4,6 +4,6 @@ from . import views
 
 app_name = 'research'
 urlpatterns = [
-    # ex: /theinformedpractitioner/research
+    # ex: /research/
     path('', views.index, name='index'),
 ]
