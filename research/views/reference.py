@@ -1,31 +1,31 @@
 from django.shortcuts import render
 
-def handleRequest(request, resource_id=None):
+def handleRequest(request, reference_id=None):
 
     context = {
-        'index_title': 'Resource Page'
+        'index_title': 'Reference Page'
     }
 
-    if resource_id:
-        # Handle existing resource
-        print("resource_id=" + str(resource_id))
+    if reference_id:
+        # Handle existing reference
+        print("reference_id=" + str(reference_id))
 
         if request.method == 'GET':
-            # Return instance of specified resource
+            # Return instance of specified reference
             print("request.GET=" + str(request.GET))
 
         elif request.method == 'POST':
-            # Update existing resource
+            # Update existing reference
             print("request.POST=" + str(request.POST))
 
     else:
-        # Handle new resource
+        # Handle new reference
         if request.method == 'GET':
-            # Return empty form for creating new resource
+            # Return empty form for creating new reference
             print("request.GET=" + str(request.GET))
             
         elif request.method == 'POST':
-            # Create new resource from form data
+            # Create new reference from form data
             print("request.POST=" + str(request.POST))
     
     return render(request, 'research/index.html', context)
